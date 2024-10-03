@@ -1,0 +1,5 @@
+ANDROID_TOOLS=~/Android/Sdk/tools
+PARTITION_SIZE=4096
+
+# fast, has Google Services
+AVD_NAME=Tiramisu-Google-API
