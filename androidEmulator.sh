@@ -4,6 +4,8 @@
 # A script to launch an Android Emulator without having to open Android Studio.
 # Create your androidEmulator.conf file in this folder containing the
 # ANDROID_TOOLS and AVD_NAME parameters (see below), and run with no arguments.
+# Or name your .conf file however you prefer, and pass its full path to the
+# script as the only argument
 set -euo pipefail
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -20,6 +22,9 @@ if [[ ${ANDROID_TOOLS} == "" || ${AVD_NAME} == "" ]]; then
     echo
     echo "You can get the AVD_NAME from Android Studio's Device Manager,"
     echo "select the AVD and look for AVD NAME in the advanced properties menu."
+    echo "Alternatively, run:"
+    echo "  emulator -list-avds"
+    echo "(emulator is in your Android SDK folder)"
     echo
     echo "Example:"
     echo "  ANDROID_TOOLS=~/Library/Android/sdk/tools"
