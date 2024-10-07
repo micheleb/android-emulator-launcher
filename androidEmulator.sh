@@ -44,6 +44,9 @@ echo "Waiting for device to be ready..."
 cd ${ANDROID_TOOLS}/../platform-tools
 ./adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done;'
 
+# wait-for-device returns a bit too early on recent emulators, wait some more
+sleep 5
+
 # React Native stuff
 echo "Running adb reverse tcp:9090 tcp:9090 (needed for Reactotron)..."
 ./adb reverse tcp:9090 tcp:9090
